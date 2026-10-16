@@ -1,0 +1,76 @@
+@use "./style/button.scss";
+
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+    width: 100%;
+    background-color: #161616;
+    color: whitesmoke;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.highlight{
+    color: #d20d3b;
+}
+
+// ── Shared helpers (used by several pages) ───────────────────────────────────
+
+// Make keyboard focus visible everywhere (accessibility).
+:focus-visible {
+    outline: 2px solid #ff6b9d;
+    outline-offset: 2px;
+}
+
+// Hidden visually but still readable by screen readers and focusable by keyboard.
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+}
+
+// Full-page message: loading, errors, 404.
+.loading-screen {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1.5rem;
+    text-align: center;
+
+    h1 {
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
+}
+
+// Error / info message box
+.alert {
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    line-height: 1.5;
+
+    &--error {
+        background-color: rgba(255, 77, 77, 0.12);
+        border: 1px solid rgba(255, 77, 77, 0.4);
+        color: #ff9b9b;
+    }
+}
+
+.empty-state {
+    color: #7d8590;
+    font-size: 0.875rem;
+    line-height: 1.6;
+}
